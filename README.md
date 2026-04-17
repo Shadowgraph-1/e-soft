@@ -1,16 +1,34 @@
-# React + Vite
+# TechStore (e-soft)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Статическая витрина каталога на **React** и **Vite** с **Tailwind CSS**. Учебный проект (итерация 1: телевизоры).
 
-Currently, two official plugins are available:
+## Запуск
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```bash
+npm install
+npm run dev
+```
 
-## React Compiler
+Сборка и превью:
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Git: отправка на GitHub / GitLab
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Ветка по умолчанию: **`main`**.
+
+```bash
+git remote add origin https://github.com/ВАШ_ЛОГИН/e-soft.git
+git push -u origin main
+```
+
+Для GitLab замените URL на адрес вашего репозитория. Первый push может попросить логин и токен (или используйте SSH).
+
+## Стек
+
+- React 19, Vite 8
+- Tailwind CSS 4 (`@tailwindcss/vite`)
+- Иконки: `lucide-react`

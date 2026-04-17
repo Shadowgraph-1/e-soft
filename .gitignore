@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Локальные папки IDE (не коммитить)
+.cursor
