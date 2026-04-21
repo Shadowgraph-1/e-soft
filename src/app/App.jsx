@@ -1,7 +1,7 @@
-import Home from "./pages/Home";
+import Container from "./layout/Container";
 
 function App() {
-  return <Home />;
+  return <Container />;
 }
 
 export default App;

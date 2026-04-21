@@ -1,16 +1,18 @@
 import { ChevronLeft, ChevronRight, Heart } from "lucide-react";
 import { useState } from "react";
-import Button from "./Button";
+import Button from "../../components/ui/Button";
 
-function ProductCard({ product }) {
+import { addOne, removeOne } from "../../../utils/cart";
+
+function ProductCard({ product, cart, setCart }) {
   const images = product.images ?? [];
   const hasMultipleImages = images.length > 1;
 
   const [imageIndex, setImageIndex] = useState(0);
   const [favorite, setFavorite] = useState(false);
-  const [cartCount, setCartCount] = useState(0);
 
   const imageUrl = images[imageIndex];
+  const qty = cart[String(product.id)] ?? 0;
 
   const goToPrevious = () => {
     setImageIndex((i) => Math.max(0, i - 1));
@@ -96,30 +98,39 @@ function ProductCard({ product }) {
           })}
         </p>
 
-        {cartCount === 0 ? (
+        {qty === 0 ? (
           <Button
             type="button"
             className="mt-auto w-full cursor-pointer rounded-md border border-neutral-900 bg-black py-2 text-sm text-white"
-            onClick={() => setCartCount(1)}
+            onClick={() =>
+              setCart((prev) => ({
+                ...prev,
+                [product.id]: (prev[product.id] ?? 0) + 1,
+              }))
+            }
           >
             Add to cart
           </Button>
         ) : (
-          <div className="mt-auto flex items-center justify-between rounded-md gap-5">
+          <div className="mt-auto inline-flex items-center self-center rounded-lg border border-neutral-200 bg-neutral-50/80 p-0.5">
             <Button
               type="button"
-              className="mt-auto w-full cursor-pointer rounded-md border border-neutral-900 bg-black py-2 text-sm text-white"
-              onClick={() => setCartCount((c) => Math.max(0, c - 1))}
+              aria-label="Decrease quantity"
+              className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-white hover:text-neutral-900"
+              onClick={() => setCart((prev) => removeOne(prev, product.id))}
             >
-              -
+              <span className="text-base leading-none">−</span>
             </Button>
-            <span className="text-sm flex w-full">{cartCount} in cart</span>
+            <span className="min-w-10 px-1 text-center text-sm font-medium tabular-nums text-neutral-800">
+              {qty}
+            </span>
             <Button
               type="button"
-              className="mt-auto w-full cursor-pointer rounded-md border border-neutral-900 bg-black py-2 text-sm text-white"
-              onClick={() => setCartCount((c) => c + 1)}
+              aria-label="Increase quantity"
+              className="flex h-8 w-8 shrink-0 cursor-pointer items-center justify-center rounded-md text-neutral-500 transition-colors hover:bg-white hover:text-neutral-900"
+              onClick={() => setCart((prev) => addOne(prev, product.id))}
             >
-              +
+              <span className="text-base leading-none">+</span>
             </Button>
           </div>
         )}

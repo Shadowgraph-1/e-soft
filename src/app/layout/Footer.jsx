@@ -1,4 +1,4 @@
-import Button from "./Button";
+import Button from "../components/ui/Button";
 
 function Footer() {
   return (
@@ -7,31 +7,50 @@ function Footer() {
         <div className="flex max-w-xs flex-col gap-2">
           <span className="font-medium">About</span>
           <p className="text-sm text-neutral-600">
-            TechStore offers curated electronics with clear pricing and dependable support. We focus on quality brands
-            and a straightforward shopping experience.
+            TechStore offers curated electronics with clear pricing and
+            dependable support. We focus on quality brands and a straightforward
+            shopping experience.
           </p>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-medium">Support</span>
-          <a href="#" className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline"
+          >
             FAQ
           </a>
-          <a href="#" className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline"
+          >
             Shipping
           </a>
-          <a href="#" className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline"
+          >
             Returns
           </a>
-          <a href="#" className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline"
+          >
             Contact
           </a>
         </div>
         <div className="flex flex-col gap-2">
           <span className="font-medium">Legal</span>
-          <a href="#" className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline"
+          >
             Privacy Policy
           </a>
-          <a href="#" className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline">
+          <a
+            href="#"
+            className="text-sm text-neutral-500 underline-offset-4 hover:text-neutral-800 hover:underline"
+          >
             Terms of Service
           </a>
         </div>
